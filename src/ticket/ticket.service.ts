@@ -8,14 +8,15 @@ export class TicketService {
   constructor(private readonly prisma: PrismaService) {}
 
   async create(createTicketDto: CreateTicketDto) {
-    return this.prisma.ticket.create({
-      data: {
-        ...createTicketDto,
-        ...(createTicketDto.employeeId && { employee: { connect: { id: createTicketDto.employeeId } } }),
-        device: { connect: { id: createTicketDto.deviceId } },
-      },
-    });
-  }
+  const { employeeId, deviceId, ...rest } = createTicketDto;
+  return this.prisma.ticket.create({
+    data: {
+      ...rest,
+      ...(employeeId && { employee: { connect: { id: employeeId } } }),
+      device: { connect: { id: deviceId } },
+    },
+  });
+}
 
   async findAll() {
     return this.prisma.ticket.findMany({
