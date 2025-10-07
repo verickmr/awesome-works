@@ -1,26 +1,67 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { CreateTicketDto } from './dto/create-ticket.dto';
 import { UpdateTicketDto } from './dto/update-ticket.dto';
+import { PrismaService } from 'src/db/prisma.service';
 
 @Injectable()
 export class TicketService {
-  create(createTicketDto: CreateTicketDto) {
-    return 'This action adds a new ticket';
+  constructor(private readonly prisma: PrismaService) {}
+
+  async create(createTicketDto: CreateTicketDto) {
+    return this.prisma.ticket.create({
+      data: {
+        ...createTicketDto,
+        ...(createTicketDto.employeeId && { employee: { connect: { id: createTicketDto.employeeId } } }),
+        device: { connect: { id: createTicketDto.deviceId } },
+      },
+    });
   }
 
-  findAll() {
-    return `This action returns all ticket`;
+  async findAll() {
+    return this.prisma.ticket.findMany({
+      include: {
+        employee: true,
+        device: true,
+      },
+    });
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} ticket`;
+  async findOne(id: number) {
+    const ticket = await this.prisma.ticket.findUnique({
+      where: { id },
+      include: {
+        employee: true,
+        device: true,
+      },
+    });
+
+    if (!ticket) {
+      throw new NotFoundException(`Ticket with ID ${id} not found`);
+    }
+
+    return ticket;
   }
 
-  update(id: number, updateTicketDto: UpdateTicketDto) {
-    return `This action updates a #${id} ticket`;
+  async update(id: number, updateTicketDto: UpdateTicketDto) {
+    const exists = await this.prisma.ticket.findUnique({ where: { id } });
+
+    if (!exists) {
+      throw new NotFoundException(`Ticket with ID ${id} not found`);
+    }
+
+    return this.prisma.ticket.update({
+      where: { id },
+      data: updateTicketDto,
+    });
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} ticket`;
+  async remove(id: number) {
+    const exists = await this.prisma.ticket.findUnique({ where: { id } });
+
+    if (!exists) {
+      throw new NotFoundException(`Ticket with ID ${id} not found`);
+    }
+
+    return this.prisma.ticket.delete({ where: { id } });
   }
 }
