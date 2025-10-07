@@ -1,0 +1,399 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2025-10-07T00:00:00.000Z",
+  "__export_source": "chatgpt-awesomeworks",
+  "resources": [
+    {
+      "_id": "wrk_awesomeworks",
+      "_type": "workspace",
+      "name": "Awesome Works API",
+      "description": "Cole\u00e7\u00e3o de requisi\u00e7\u00f5es da API Awesome Works (Insomnia)",
+      "scope": "collection"
+    },
+    {
+      "_id": "req_create_department",
+      "_type": "request",
+      "parentId": "wrk_awesomeworks",
+      "name": "Create Department",
+      "method": "POST",
+      "url": "http://localhost:3000/department",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"name\": \"IT Department\",\n  \"description\": \"Handles internal technical support\"\n}"
+      },
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "parameters": [],
+      "authentication": {},
+      "metaSortKey": -1000000000.0
+    },
+    {
+      "_id": "req_list_departments",
+      "_type": "request",
+      "parentId": "wrk_awesomeworks",
+      "name": "List Departments",
+      "method": "GET",
+      "url": "http://localhost:3000/department",
+      "body": {},
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "parameters": [],
+      "authentication": {},
+      "metaSortKey": -1000000000.0
+    },
+    {
+      "_id": "req_get_department_by_id",
+      "_type": "request",
+      "parentId": "wrk_awesomeworks",
+      "name": "Get Department by ID",
+      "method": "GET",
+      "url": "http://localhost:3000/department/1",
+      "body": {},
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "parameters": [],
+      "authentication": {},
+      "metaSortKey": -1000000000.0
+    },
+    {
+      "_id": "req_update_department",
+      "_type": "request",
+      "parentId": "wrk_awesomeworks",
+      "name": "Update Department",
+      "method": "PATCH",
+      "url": "http://localhost:3000/department/1",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"description\": \"Updated department description\"\n}"
+      },
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "parameters": [],
+      "authentication": {},
+      "metaSortKey": -1000000000.0
+    },
+    {
+      "_id": "req_delete_department",
+      "_type": "request",
+      "parentId": "wrk_awesomeworks",
+      "name": "Delete Department",
+      "method": "DELETE",
+      "url": "http://localhost:3000/department/1",
+      "body": {},
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "parameters": [],
+      "authentication": {},
+      "metaSortKey": -1000000000.0
+    },
+    {
+      "_id": "req_create_employee",
+      "_type": "request",
+      "parentId": "wrk_awesomeworks",
+      "name": "Create Employee",
+      "method": "POST",
+      "url": "http://localhost:3000/employee",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"name\": \"John Doe\",\n  \"email\": \"john.doe@example.com\",\n  \"departmentId\": 1,\n  \"role\": \"IT Technician\"\n}"
+      },
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "parameters": [],
+      "authentication": {},
+      "metaSortKey": -1000000000.0
+    },
+    {
+      "_id": "req_list_employees",
+      "_type": "request",
+      "parentId": "wrk_awesomeworks",
+      "name": "List Employees",
+      "method": "GET",
+      "url": "http://localhost:3000/employee",
+      "body": {},
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "parameters": [],
+      "authentication": {},
+      "metaSortKey": -1000000000.0
+    },
+    {
+      "_id": "req_get_employee_by_id",
+      "_type": "request",
+      "parentId": "wrk_awesomeworks",
+      "name": "Get Employee by ID",
+      "method": "GET",
+      "url": "http://localhost:3000/employee/1",
+      "body": {},
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "parameters": [],
+      "authentication": {},
+      "metaSortKey": -1000000000.0
+    },
+    {
+      "_id": "req_update_employee",
+      "_type": "request",
+      "parentId": "wrk_awesomeworks",
+      "name": "Update Employee",
+      "method": "PATCH",
+      "url": "http://localhost:3000/employee/1",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"role\": \"Senior IT Technician\"\n}"
+      },
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "parameters": [],
+      "authentication": {},
+      "metaSortKey": -1000000000.0
+    },
+    {
+      "_id": "req_delete_employee",
+      "_type": "request",
+      "parentId": "wrk_awesomeworks",
+      "name": "Delete Employee",
+      "method": "DELETE",
+      "url": "http://localhost:3000/employee/1",
+      "body": {},
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "parameters": [],
+      "authentication": {},
+      "metaSortKey": -1000000000.0
+    },
+    {
+      "_id": "req_create_device",
+      "_type": "request",
+      "parentId": "wrk_awesomeworks",
+      "name": "Create Device",
+      "method": "POST",
+      "url": "http://localhost:3000/device",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"prefix\": \"PC-001\",\n  \"serialNumber\": \"SN123456789\",\n  \"imei\": \"123456789012345\",\n  \"status\": \"available\",\n  \"employeeId\": 1,\n  \"departmentId\": 2\n}"
+      },
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "parameters": [],
+      "authentication": {},
+      "metaSortKey": -1000000000.0
+    },
+    {
+      "_id": "req_list_devices",
+      "_type": "request",
+      "parentId": "wrk_awesomeworks",
+      "name": "List Devices",
+      "method": "GET",
+      "url": "http://localhost:3000/device",
+      "body": {},
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "parameters": [],
+      "authentication": {},
+      "metaSortKey": -1000000000.0
+    },
+    {
+      "_id": "req_get_device_by_id",
+      "_type": "request",
+      "parentId": "wrk_awesomeworks",
+      "name": "Get Device by ID",
+      "method": "GET",
+      "url": "http://localhost:3000/device/1",
+      "body": {},
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "parameters": [],
+      "authentication": {},
+      "metaSortKey": -1000000000.0
+    },
+    {
+      "_id": "req_update_device",
+      "_type": "request",
+      "parentId": "wrk_awesomeworks",
+      "name": "Update Device",
+      "method": "PATCH",
+      "url": "http://localhost:3000/device/1",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"status\": \"in-use\"\n}"
+      },
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "parameters": [],
+      "authentication": {},
+      "metaSortKey": -1000000000.0
+    },
+    {
+      "_id": "req_delete_device",
+      "_type": "request",
+      "parentId": "wrk_awesomeworks",
+      "name": "Delete Device",
+      "method": "DELETE",
+      "url": "http://localhost:3000/device/1",
+      "body": {},
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "parameters": [],
+      "authentication": {},
+      "metaSortKey": -1000000000.0
+    },
+    {
+      "_id": "req_create_ticket",
+      "_type": "request",
+      "parentId": "wrk_awesomeworks",
+      "name": "Create Ticket",
+      "method": "POST",
+      "url": "http://localhost:3000/ticket",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"title\": \"Monitor not working\",\n  \"description\": \"The screen goes black after turning on\",\n  \"status\": \"open\",\n  \"employeeId\": 1,\n  \"deviceId\": 5\n}"
+      },
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "parameters": [],
+      "authentication": {},
+      "metaSortKey": -1000000000.0
+    },
+    {
+      "_id": "req_list_tickets",
+      "_type": "request",
+      "parentId": "wrk_awesomeworks",
+      "name": "List Tickets",
+      "method": "GET",
+      "url": "http://localhost:3000/ticket",
+      "body": {},
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "parameters": [],
+      "authentication": {},
+      "metaSortKey": -1000000000.0
+    },
+    {
+      "_id": "req_get_ticket_by_id",
+      "_type": "request",
+      "parentId": "wrk_awesomeworks",
+      "name": "Get Ticket by ID",
+      "method": "GET",
+      "url": "http://localhost:3000/ticket/1",
+      "body": {},
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "parameters": [],
+      "authentication": {},
+      "metaSortKey": -1000000000.0
+    },
+    {
+      "_id": "req_update_ticket",
+      "_type": "request",
+      "parentId": "wrk_awesomeworks",
+      "name": "Update Ticket",
+      "method": "PATCH",
+      "url": "http://localhost:3000/ticket/1",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"status\": \"closed\"\n}"
+      },
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "parameters": [],
+      "authentication": {},
+      "metaSortKey": -1000000000.0
+    },
+    {
+      "_id": "req_delete_ticket",
+      "_type": "request",
+      "parentId": "wrk_awesomeworks",
+      "name": "Delete Ticket",
+      "method": "DELETE",
+      "url": "http://localhost:3000/ticket/1",
+      "body": {},
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "parameters": [],
+      "authentication": {},
+      "metaSortKey": -1000000000.0
+    }
+  ]
+}
