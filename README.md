@@ -82,7 +82,7 @@ Utilize o Swagger para testar todos os endpoints de forma interativa.
 ---
 ## 🧪 Coleção de Testes da API
 Para facilitar os testes, a coleção Postman da API está disponível neste repositório:  
-**Arquivo:** `AwesomeWorks.postman_collection.json`
+**Arquivo:** `AwesomeWorks_Insomnia.json`
 
 Basta importar no Postman, Insomnia ou Hoppscotch para testar todos os endpoints (CRUD de Department, Employee, Device e Ticket).
 
